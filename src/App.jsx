@@ -1,4 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import LoginPage from './components/Login/LoginPage'
+import ReferralPage from './components/Dashboard/ReferralPage'
+
 
 
 function App() {
@@ -6,7 +9,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/' element={<ReferralPage />} />
         </Routes>
       </BrowserRouter>
     </>
