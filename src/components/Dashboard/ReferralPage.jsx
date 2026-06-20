@@ -1,8 +1,13 @@
 import React from 'react'
+import Header from '../Header/Header'
 
 const ReferralPage = () => {
   return (
-    <div>ReferralPage</div>
+    <>
+      <Header />
+      <div>ReferralPage</div>
+    </>
+    
   )
 }
 

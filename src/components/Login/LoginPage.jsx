@@ -24,7 +24,7 @@ const LoginPage = (props) => {
             expires: 30,
             path: '/'
         })
-        navigate('/')
+        navigate('/', {replace: true})
     }
 
     const onSubmitFailure = (errorMsg) => {
@@ -51,16 +51,13 @@ const LoginPage = (props) => {
             const response = await fetch(url, options)
             const data = await response.json()
             if (response.ok) {
-                // Handle successful login
                 //console.log('Login successful', data)
                 onSubmitSuccess(data.data.token);
             } else {
-                // Handle login error
                 //console.error('Login failed', data.message)
                 onSubmitFailure(data.message)
             }
         } catch (error) {
-            // Handle network error
             console.error('Network error', error)
         }
     }
@@ -90,6 +87,12 @@ const LoginPage = (props) => {
              />
         </>
     )
+
+    const token = Cookies.get('jwt_token')
+    if(token !== undefined) {
+        return <Navigate to='/' />
+    }
+
 
   return (
     <div className='bg-blue-100 min-h-screen flex flex-col justify-center items-center'>

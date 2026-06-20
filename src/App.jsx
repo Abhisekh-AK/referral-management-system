@@ -10,8 +10,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/' element={<ReferralPage />} />
+          <Route exact path='/login' element={<LoginPage />} />
+          <Route exact path='/' element={<ReferralPage />} />
           {/* <Route path='/not-found' element={<NotFound />} /> */}
           <Route path='*' element={<NotFound />} />
         </Routes>
