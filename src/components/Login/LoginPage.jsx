@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import Cookies from 'js-cookie'
-import './LoginPage.css'
+import '../../index.css'
 
 const LoginPage = (props) => {
     const [email, setEmail] = useState('')
